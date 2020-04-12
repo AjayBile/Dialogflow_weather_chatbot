@@ -60,7 +60,9 @@ def makeResponse(req):
             condition=weather[i]['weather'][0]['description']
 
     speech = "The forecast for " + city + " on " + new_date + " is " + condition
-    return {"fulfillmentMessages": [{"text": {"text": speech}}]}
+    # return {"fulfillmentMessages": [{"text": {"text": speech}}]}
+
+    return {"fulfillmentText": "Text response", "fulfillmentMessages": [{"text": {"text": [speech]}}],"source": "apiai-weather-webhook"}
 
     # return { # "speech": speech, # "displayText":speech, # "source":"apiai-weather-webhook"}
 
